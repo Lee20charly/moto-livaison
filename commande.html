@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commander - MotoExpress</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-motorcycle"></i>
+            <span>MotoExpress</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Accueil</a></li>
+            <li><a href="commande.html">Commander</a></li>
+            <li><a href="suivi.html">Suivi</a></li>
+            <li><a href="compte.html">Mon Compte</a></li>
+            <li><a href="about.html">À Propos</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <main class="commande-container">
+        <h1>Passer une commande</h1>
+        
+        <form class="commande-form">
+            <div class="form-section">
+                <h2>Détails du colis</h2>
+                <div class="form-group">
+                    <label for="type-colis">Type de colis</label>
+                    <select id="type-colis" required>
+                        <option value="">Sélectionnez un type</option>
+                        <option value="petit">Petit (max 5kg)</option>
+                        <option value="moyen">Moyen (max 10kg)</option>
+                        <option value="grand">Grand (max 15kg)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description du colis</label>
+                    <textarea id="description" rows="3" required></textarea>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Adresses</h2>
+                <div class="form-group">
+                    <label for="adresse-depart">Adresse de départ</label>
+                    <input type="text" id="adresse-depart" required>
+                </div>
+                <div class="form-group">
+                    <label for="adresse-arrivee">Adresse d'arrivée</label>
+                    <input type="text" id="adresse-arrivee" required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h2>Contact destinataire</h2>
+                <div class="form-group">
+                    <label for="nom-destinataire">Nom</label>
+                    <input type="text" id="nom-destinataire" required>
+                </div>
+                <div class="form-group">
+                    <label for="tel-destinataire">Téléphone</label>
+                    <input type="tel" id="tel-destinataire" required>
+                </div>
+            </div>
+
+            <div class="prix-estimation">
+                <h3>Estimation du prix</h3>
+                <p class="prix">12.99 €</p>
+            </div>
+
+            <button type="submit" class="submit-button">Commander maintenant</button>
+        </form>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: contact@motoexpress.fr</p>
+                <p>Tél: 01 23 45 67 89</p>
+            </div>
+            <div class="footer-section">
+                <h4>Liens utiles</h4>
+                <a href="#">À propos</a>
+                <a href="#">CGV</a>
+                <a href="#">Confidentialité</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 MotoExpress - Tous droits réservés</p>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>

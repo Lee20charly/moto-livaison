@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Compte - MotoExpress</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-motorcycle"></i>
+            <span>MotoExpress</span>
+        </div>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Accueil</a></li>
+            <li><a href="commande.html">Commander</a></li>
+            <li><a href="suivi.html">Suivi</a></li>
+            <li><a href="compte.html">Mon Compte</a></li>
+            <li><a href="about.html">À Propos</a></li>
+        </ul>
+    </nav>
+
+    <main class="account-page">
+        <div class="account-header">
+            <div class="user-info">
+                <div class="user-avatar">
+                    <img src="https://ui-avatars.com/api/?name=John+Doe" alt="Photo de profil">
+                    <button class="edit-avatar">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                </div>
+                <h1>John Doe</h1>
+                <p>Membre depuis 2023</p>
+            </div>
+        </div>
+
+        <div class="settings-container">
+            <div class="settings-sidebar">
+                <nav class="settings-nav">
+                    <a href="#profile" class="active"><i class="fas fa-user"></i> Profil</a>
+                    <a href="#addresses"><i class="fas fa-map-marker-alt"></i> Adresses</a>
+                    <a href="#preferences"><i class="fas fa-cog"></i> Préférences</a>
+                    <a href="#security"><i class="fas fa-shield-alt"></i> Sécurité</a>
+                    <a href="#notifications"><i class="fas fa-bell"></i> Notifications</a>
+                </nav>
+            </div>
+
+            <div class="settings-content">
+                <!-- Section Profil -->
+                <section id="profile" class="settings-section active">
+                    <h2>Informations Personnelles</h2>
+                    <form id="profile-form" class="settings-form">
+                        <div class="form-group">
+                            <label for="fullname">Nom complet</label>
+                            <input type="text" id="fullname" name="fullname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="birthday">Date de naissance</label>
+                            <input type="date" id="birthday" name="birthday">
+                        </div>
+                        <button type="submit" class="btn-primary">Sauvegarder</button>
+                    </form>
+                </section>
+
+                <!-- Section Adresses -->
+                <section id="addresses" class="settings-section">
+                    <h2>Mes Adresses</h2>
+                    <div id="address-list" class="address-grid"></div>
+                    
+                    <form id="address-form" class="settings-form">
+                        <h3>Ajouter une adresse</h3>
+                        <div class="form-group">
+                            <label for="address-name">Nom de l'adresse</label>
+                            <input type="text" id="address-name" name="address-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="street">Rue</label>
+                            <input type="text" id="street" name="street" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">Ville</label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="postal">Code postal</label>
+                                <input type="text" id="postal" name="postal" required>
+                            </div>
+                        </div>
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="default" name="default">
+                            <label for="default">Définir comme adresse par défaut</label>
+                        </div>
+                        <button type="submit" class="btn-primary">Ajouter</button>
+                    </form>
+                </section>
+
+                <!-- Section Préférences -->
+                <section id="preferences" class="settings-section">
+                    <h2>Préférences de Livraison</h2>
+                    <form id="delivery-preferences" class="settings-form">
+                        <div class="form-group">
+                            <label for="preferred-time">Horaire de livraison préféré</label>
+                            <select id="preferred-time" name="preferred-time">
+                                <option value="morning">Matin (8h-12h)</option>
+                                <option value="afternoon">Après-midi (12h-18h)</option>
+                                <option value="evening">Soir (18h-22h)</option>
+                            </select>
+                        </div>
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="contact-before" name="contact-before">
+                            <label for="contact-before">Me contacter avant la livraison</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="special-instructions">Instructions spéciales</label>
+                            <textarea id="special-instructions" name="special-instructions"></textarea>
+                        </div>
+                    </form>
+
+                    <h2>Préférences d'Affichage</h2>
+                    <div class="settings-form">
+                        <div class="form-group switch">
+                            <label for="theme-toggle">Thème sombre</label>
+                            <label class="switch">
+                                <input type="checkbox" id="theme-toggle">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section Sécurité -->
+                <section id="security" class="settings-section">
+                    <h2>Sécurité du Compte</h2>
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label for="current-password">Mot de passe actuel</label>
+                            <input type="password" id="current-password" name="current-password">
+                        </div>
+                        <div class="form-group">
+                            <label for="new-password">Nouveau mot de passe</label>
+                            <input type="password" id="new-password" name="new-password">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Confirmer le mot de passe</label>
+                            <input type="password" id="confirm-password" name="confirm-password">
+                        </div>
+                        <button type="submit" class="btn-primary">Changer le mot de passe</button>
+                    </form>
+
+                    <h2>Authentification à deux facteurs</h2>
+                    <div class="settings-form">
+                        <div class="form-group switch">
+                            <label for="2fa-toggle">Activer l'authentification à deux facteurs</label>
+                            <label class="switch">
+                                <input type="checkbox" id="2fa-toggle">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section Notifications -->
+                <section id="notifications" class="settings-section">
+                    <h2>Préférences de Notifications</h2>
+                    <div class="settings-form">
+                        <div class="form-group switch">
+                            <label for="notifications-toggle">Activer les notifications</label>
+                            <label class="switch">
+                                <input type="checkbox" id="notifications-toggle">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="notification-options">
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="notif-orders" name="notif-orders">
+                                <label for="notif-orders">Statut des commandes</label>
+                            </div>
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="notif-promos" name="notif-promos">
+                                <label for="notif-promos">Promotions et offres</label>
+                            </div>
+                            <div class="form-group checkbox">
+                                <input type="checkbox" id="notif-news" name="notif-news">
+                                <label for="notif-news">Actualités et mises à jour</label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
